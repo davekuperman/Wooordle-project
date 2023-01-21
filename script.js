@@ -10,28 +10,41 @@ console.log(guessWord)
 const userGuess = [] //users guess attempt which will be compared to the guessWord
 
 let getLetters = document.querySelectorAll('.key')
+let tiles = document.querySelectorAll('.tiles')
+let selectedTileIndex = 0
 
+let wordAttempt = ''
 
-let activeTile = document.querySelector('.firstTR1')
 
 
 for (let i = 0; i < getLetters.length; i++) {
     getLetters[i].addEventListener('click', function () {
+        
         let singleLetter = getLetters[i].textContent
         console.log('clicked' + singleLetter)
 
-        activeTile.textContent = singleLetter
-        activeTile = activeTile.nextElementSibling
-        
-        if(activeTile === null){
-//if activeTile is showing error, check word attempt against guessWord, change tiles to correct colors in relation to the rules, if word is correct end game.
+        wordAttempt = wordAttempt + singleLetter 
+
+        tiles[selectedTileIndex].textContent = singleLetter
+        console.log(tiles[selectedTileIndex])
+        selectedTileIndex++
        
+        if(selectedTileIndex % 4 == 0){
+            
+            console.log(wordAttempt)
+            //word has been input, check word against word array etc
         }
+        
+
+        //if (activeTile === null) {
+            //if activeTile is showing error, check word attempt against guessWord, change tiles to correct colors in relation to the rules, if word is correct end game.
+
+        // }
+        
+
     })
-    console.log(getLetters[i])
+    
 }
-
-
 
 
 
