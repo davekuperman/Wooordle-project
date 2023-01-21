@@ -4,12 +4,22 @@ body{
     text-align: center;
 }
 
+ol{
+    text-align: center;
+    list-style-position: inside;
+}
+li{
+    text-align: center;
+    justify-content: center;
+}
+
+/*Tile Styling */
+
 .word-tiles-all{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .tiles{
     width: 50px;
     height: 50px;
@@ -17,14 +27,20 @@ body{
     box-sizing: border-box;
     margin: 5px;
 }
-ol{
-    text-align: center;
-}
-li{
-    text-align: center;
-    justify-content: center;
-}
 .tileRows{
     display: flex;
     justify-content: center;
 }
+
+/* KEYBOARD STYLING */
+.key{
+    text-transform: uppercase;
+    background-color: grey;
+    height: 50px;
+    width: 50px;
+    border-radius: 4px;
+    margin-right: 6px;
+    margin-top: 2px;
+    cursor: pointer
+}
+
