@@ -14,10 +14,9 @@ console.log(tileRow)
 
 let selectedTile = 0
 
-function deleteLetter() {
-    selectedTile--
-    const currentTile = document.querySelector('.tile')
-    console.log(currentTile)
+const checkWord = function(){
+    
+
 }
 
 //input clicked keyboard innertext into tile grid
@@ -27,19 +26,20 @@ for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and a
         const letter = getLetters[i].textContent //grabs the individual letter in element
 
         if (letter === 'del') {
-            tiles[selectedTile - 1].textContent = ''
+            tiles[selectedTile-1].textContent = ''
             console.log('deleted')
-            if (selectedTile <= 1) { return; }
+            
             selectedTile--
+            if (selectedTile == 0) { return; }
         }
         else if (letter === 'enter') {
             console.log('enter')
         }
         else {
             console.log('clicked ' + letter)
+            if (selectedTile == 5) { return; }
             tiles[selectedTile].textContent = letter
-            if (selectedTile >= 4) { return; }
-            selectedTile++
+            selectedTile +=1
         }
     }
     )
