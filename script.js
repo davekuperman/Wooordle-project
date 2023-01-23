@@ -1,51 +1,47 @@
 //VARIABLES LIST
 
 const words = ["aback", "abase", "abate", "abbey", "abbot", "abhor", "abide", "abled", "abode", "abort", "about", "above", "abuse", "abyss", "acorn", "acrid", "actor", "acute", "adage", "adapt"]
-
-
 const guessWord = words[Math.floor(Math.random() * words.length)]/*generates the random word that user must guess*/
 console.log(guessWord)
 
+let wordGuesses = [[]]
 
-const userGuess = [] //users guess attempt which will be compared to the guessWord
+let getLetters = document.querySelectorAll('.key') // selects html element for keyboard keys
 
-let getLetters = document.querySelectorAll('.key')
-let tiles = document.querySelectorAll('.tiles')
-let selectedTileIndex = 0
+let tiles = document.querySelectorAll('.tile') // select html element for grid tile
+let tileRow = document.querySelectorAll('.row')// select html element for tile row
+console.log(tileRow)
 
-let wordAttempt = ''
+let selectedTile = 0
 
-
-
-for (let i = 0; i < getLetters.length; i++) {
-    getLetters[i].addEventListener('click', function () {
-        
-        let singleLetter = getLetters[i].textContent
-        console.log('clicked' + singleLetter)
-
-        wordAttempt = wordAttempt + singleLetter 
-
-        tiles[selectedTileIndex].textContent = singleLetter
-        console.log(tiles[selectedTileIndex])
-        selectedTileIndex++
-       
-        if(selectedTileIndex % 4 == 0){
-            
-            console.log(wordAttempt)
-            //word has been input, check word against word array etc
-        }
-        
-
-        //if (activeTile === null) {
-            //if activeTile is showing error, check word attempt against guessWord, change tiles to correct colors in relation to the rules, if word is correct end game.
-
-        // }
-        
-
-    })
-    
+function deleteLetter() {
+    selectedTile--
+    const currentTile = document.querySelector('.tile')
+    console.log(currentTile)
 }
 
+//input clicked keyboard innertext into tile grid
+for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and adds a "click" event listener
+    getLetters[i].addEventListener('click', function () {
 
+        const letter = getLetters[i].textContent //grabs the individual letter in element
 
+        if (letter === 'del') {
+            tiles[selectedTile - 1].textContent = ''
+            console.log('deleted')
+            if (selectedTile <= 1) { return; }
+            selectedTile--
+        }
+        else if (letter === 'enter') {
+            console.log('enter')
+        }
+        else {
+            console.log('clicked ' + letter)
+            tiles[selectedTile].textContent = letter
+            if (selectedTile >= 4) { return; }
+            selectedTile++
+        }
+    }
+    )
+}
 
