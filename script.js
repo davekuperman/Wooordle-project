@@ -4,7 +4,7 @@ const words = ["aback", "abase", "abate", "abbey", "abbot", "abhor", "abide", "a
 const guessWord = words[Math.floor(Math.random() * words.length)]/*generates the random word that user must guess*/
 console.log(guessWord)
 
-let wordGuesses = [[]]
+
 
 let getLetters = document.querySelectorAll('.key') // selects html element for keyboard keys
 
@@ -14,10 +14,15 @@ console.log(tileRow)
 
 let selectedTile = 0
 
-const checkWord = function(){
-    
+/* write a function that checks the word in a row
+ 1.When each letter is passed into a tile, add those letters into an array.--
+ 2.join the array of letters to form a string (usersWords)
+ 3.check/match the usersword string with the actual word
+*/
 
-}
+let usersWord = []
+
+
 
 //input clicked keyboard innertext into tile grid
 for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and adds a "click" event listener
@@ -26,9 +31,10 @@ for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and a
         const letter = getLetters[i].textContent //grabs the individual letter in element
 
         if (letter === 'del') {
-            tiles[selectedTile-1].textContent = ''
+            tiles[selectedTile - 1].textContent = ''
             console.log('deleted')
-            
+            usersWord.pop()
+
             selectedTile--
             if (selectedTile == 0) { return; }
         }
@@ -39,7 +45,11 @@ for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and a
             console.log('clicked ' + letter)
             if (selectedTile == 5) { return; }
             tiles[selectedTile].textContent = letter
-            selectedTile +=1
+
+            usersWord.push(letter)
+
+            console.log(usersWord)
+            selectedTile += 1
         }
     }
     )
