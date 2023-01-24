@@ -33,6 +33,8 @@ function checkInput() {
         errorPrompt.textContent = 'Well done!'
     } else {
         //input code to move to the next tile row
+            usersWord = []
+        
     }
 }
 
@@ -56,13 +58,13 @@ for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and a
 
         }
         else {
-            let input = usersWord.join('')
+            let input = usersWord.join('').toUpperCase()
             input = input.toUpperCase()
-            console.log('clicked ' + letter)
-            if (input.length == 5) { return; }
+            console.log ('clicked ' + letter)
+            if(usersWord.length == 5) { return; }
+            
             tiles[selectedTile].textContent = letter
             usersWord.push(letter)
-            console.log(usersWord)
             selectedTile += 1
         }
     }
