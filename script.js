@@ -20,7 +20,12 @@ let selectedRow = 0
  4. once the usersWord has been compared to the guessWord, if userWord is wrong progress to next row of tiles
  5.
 */
-     if (input.length !== 5) {
+
+function checkInput() {
+    let input = usersWord.join('')
+    input = input.toUpperCase()
+    console.log(input)
+    if (input.length !== 5) {
         errorPrompt.textContent = 'You must guess a word with 5 letters'
         console.log("not enough characters")
     }
@@ -29,7 +34,7 @@ let selectedRow = 0
     } else {
         //input code to move to the next tile row
     }
-
+}
 
 //input clicked keyboard innertext into tile grid
 for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and adds a "click" event listener
@@ -47,7 +52,6 @@ for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and a
         }
         else if (letter === 'enter') {
             console.log('enter')
-
             checkInput()
 
         }
