@@ -45,3 +45,21 @@ li{
     cursor: pointer
 }
 
+.grey{
+    background-color: grey;
+    border: none;
+
+}
+
+
+.yellow{
+    background-color: yellow;
+    border: none;
+    
+}
+
+.green{
+    background-color: green;
+    border: none
+
+}
