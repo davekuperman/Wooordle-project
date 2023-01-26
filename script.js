@@ -7,12 +7,25 @@ let usersWord = []
 
 let errorPrompt = document.querySelector('#gameMessage')
 let getLetters = document.querySelectorAll('.key') // selects html element for keyboard keys
+
 let tiles = document.querySelectorAll('.tile') // select html element for grid tile
 let tileRow = document.querySelectorAll('.tileRow')// select html element for tile row
 
 let selectedTile = 0
 let row = 0
-let selectedRow = 0
+
+
+let instructionsButton = document.querySelector('.instructions-button')
+instructionsButton.addEventListener('click',function(){
+    alert("VERY FUN WORD GAME INSTRUCTIONS")
+})
+
+//use the array to skip over the rows  7th variable to complete the game, true is starting point
+const checked = [true, false, false, false, false, false, false];
+
+
+
+// let selectedRow = 0
 
 /* write a function that checks the word in a row
  1.When each letter is passed into a tile, add those letters into an array. *done*
@@ -69,7 +82,7 @@ function tileColours(row) {
         let tile = document.getElementById(row + 'TileRow').children[i]
         console.log(tile)
         if (guessWord[i] === usersWord[i].toUpperCase()) {
-            tile.style.backgroundColor = "green"
+            tile.style.backgroundColor = "rgb(29, 202, 122)"
             // console.log("green")
 
         }
@@ -83,6 +96,7 @@ function tileColours(row) {
     }
 
 }
+
 //input clicked keyboard innertext into tile grid
 for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and adds a "click" event listener
     getLetters[i].addEventListener('click', function () {
@@ -93,6 +107,7 @@ for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and a
             tiles[selectedTile - 1].textContent = ''
             console.log('deleted')
             usersWord.pop()
+                
 
             selectedTile--
             if (selectedTile == 0) { return; }
@@ -109,7 +124,8 @@ for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and a
 
             tiles[selectedTile].textContent = letter
             usersWord.push(letter)
-            selectedTile += 1
+            selectedTile++
+            console.log(selectedTile, row)
         }
     }
     )

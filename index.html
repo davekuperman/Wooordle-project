@@ -12,22 +12,20 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Londrina+Shadow&family=Londrina+Solid&display=swap');
+      </style>
+
 </head>
 
 <body>
+    <div class="container-h1">
+        <h1>Wordle</h1>
+    </div>
 
-    <h1>Wordle</h1>
-
-    <h3>A fun and exciting word game... woooo</h3>
-
-    <h3> Instructions</h3>
-    <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ol>
+    <div>
+        <button class="instructions-button"> Instructions</button>
+    </div>
 
     <h2 id="gameMessage"></h2>
     <div id="word-tiles-all">
@@ -38,35 +36,35 @@
             <div class="tile" id="firstTR3"></div>
             <div class="tile" id="firstTR4"></div>
         </div>
-         <div class="tileRow" id="1TileRow">
+        <div class="tileRow" id="1TileRow">
             <div class="tile" id="secondTR1"></div>
             <div class="tile" id="secondTR2"></div>
             <div class="tile" id="secondTR3"></div>
             <div class="tile" id="secondTR4"></div>
             <div class="tile" id="secondTR5"></div>
         </div>
-          <div class="tileRow" id="2TileRow">
+        <div class="tileRow" id="2TileRow">
             <div class="tile" id="thirdTR1"></div>
             <div class="tile" id="thirdTR2"></div>
             <div class="tile" id="thirdTR3"></div>
             <div class="tile" id="thirdTR4"></div>
             <div class="tile" id="thirdTR5"></div>
         </div>
-          <div class="tileRow" id="3TileRow">
+        <div class="tileRow" id="3TileRow">
             <div class="tile" id="fourthTR1"></div>
             <div class="tile" id="fourthTR2"></div>
             <div class="tile" id="fourthTR3"></div>
             <div class="tile" id="fourthTR4"></div>
             <div class="tile" id="fourthTR5"></div>
         </div>
-          <div class="tileRow" id="4TileRow">
+        <div class="tileRow" id="4TileRow">
             <div class="tile" id="fifthTR1"></div>
             <div class="tile" id="fifthTR2"></div>
             <div class="tile" id="fifthTR3"></div>
             <div class="tile" id="fifthTR4"></div>
             <div class="tile" id="fifthTR5"></div>
         </div>
-          <div class="tileRow" id="5TileRow">
+        <div class="tileRow" id="5TileRow">
             <div class="tile" id="sixthTR1"></div>
             <div class="tile" id="sixthTR2"></div>
             <div class="tile" id="sixthTR3"></div>
@@ -88,7 +86,7 @@
             <button class="key">i</button>
             <button class="key">o</button>
             <button class="key">p</button>
-            <button id="del" class="key">del</button>
+            
 
         </div>
         <div class="row" id="row-1">
@@ -103,6 +101,7 @@
             <button class="key">l</button>
         </div>
         <div class="row" id="row-2">
+            <button id="del" class="key big" >del</button>
             <button class="key">z</button>
             <button class="key">x</button>
             <button class="key">c</button>
@@ -110,7 +109,7 @@
             <button class="key">b</button>
             <button class="key">n</button>
             <button class="key">m</button>
-            <button class="key">enter</button>
+            <button class="key big">enter</button>
         </div>
     </div>
 

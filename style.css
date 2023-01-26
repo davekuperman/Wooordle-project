@@ -1,65 +1,104 @@
-body{
-    max-width: 1000px;
-    margin: 0 auto;
+/* *, *::after, *::before{
+    box-sizing: border-box;
+} */
+
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1em; /* <- em is a unit of measure based on the size of the font set within the element */
+    background-color: #CEEDC7;
     text-align: center;
+    font-size: clamp(.5rem, 2.5vmin, 1.5rem);
+
 }
 
-ol{
-    text-align: center;
-    list-style-position: inside;
-}
-li{
-    text-align: center;
+.container-h1 {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    margin: 0px;
+}
+
+h1 {
+    font-family: 'Londrina Solid', cursive;
+    color: #FFD4B2;
+    font-size: 6em;
+    margin: 0 auto;
+    position: relative;
+}
+
+h1::after {
+    content: "Wordle";
+    font-family: 'Londrina Shadow', cursive;
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+h3 {
+    font-family: 'Londrina Solid', cursive;
+    ;
 }
 
 /*Tile Styling */
 
-.word-tiles-all{
-    display: flex;
+.word-tiles-all {
+    display:flex ;
     justify-content: center;
     align-items: center;
 }
-.tile{
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    box-sizing: border-box;
-    margin: 5px;
-    text-transform: uppercase;
-}
-.tileRow{
+.tileRow {
     display: flex;
     justify-content: center;
 }
 
-/* KEYBOARD STYLING */
-.key{
+.tile {
+    width: 1.25em;
+    height: 1.25em;
+    font-size: 3em;
+    border: 3px solid rgb(162, 155, 155);
+    box-sizing: border-box;
+    margin: 5px;
     text-transform: uppercase;
-    background-color: grey;
-    height: 50px;
-    width: 50px;
-    border-radius: 4px;
+    background-color: #def7d9;
+    font-family: 'Londrina Solid', cursive;
+    color: rgb(70, 72, 73);
+}
+
+
+/* KEYBOARD STYLING */
+#keyboard{ 
+    display:grid ;
+    justify-content: center;
+    align-items: center;
+
+}
+#row{
+
+    display: flex;
+    justify-content: center;
+    /* display: grid;
+    grid-template-columns: repeat(20, minmax(auto, 1.25em));
+    grid-auto-rows: 3em;
+    gap: .25em; */
+}
+.key {
+    grid-column: span 2;
+    border: none;
+    text-transform: uppercase;
+    background-color: #86C8BC;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    /* height: 50px;
+    width: 50px; */
+    border-radius: .25em;
     margin-right: 6px;
     margin-top: 2px;
-    cursor: pointer
-}
-
-.grey{
-    background-color: grey;
-    border: none;
-
-}
-
-
-.yellow{
-    background-color: yellow;
-    border: none;
-    
-}
-
-.green{
-    background-color: green;
-    border: none
-
+    cursor: pointer;
+    font-size: inherit;
 }
