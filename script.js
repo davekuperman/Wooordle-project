@@ -51,6 +51,7 @@ function checkInput() {
         usersWord = []
     }
     row++
+    console.log("row is "+ row + " & current tile is" + selectedTile)
 }
 
 //let tileColour = ['grey', 'grey', 'grey', 'grey', 'grey'];
@@ -108,8 +109,9 @@ for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and a
             
             usersWord.pop()
             
-            if(usersWord.length === 0){return;}
-            selectedTile= selectedTile - 1
+            if(usersWord.length === 0){return}
+            selectedTile--
+            
             
             
         }
@@ -126,7 +128,7 @@ for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and a
             tiles[selectedTile].textContent = letter
             usersWord.push(letter)
             selectedTile++
-            console.log(selectedTile, row)
+            console.log("selected tile is "+selectedTile+ " & the current row is " + row)
         }
     
     }
