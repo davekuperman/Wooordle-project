@@ -30,7 +30,7 @@ h1 {
 }
 
 h1::after {
-    content: "Wordle";
+    content: "Very Fun Word Game";
     font-family: 'Londrina Shadow', cursive;
     color: black;
     position: absolute;
@@ -45,6 +45,15 @@ h3 {
 }
 .instructions-container{
     padding-bottom: 1em;
+}
+.instructions-button{
+    padding:  1em;
+    border-radius: .5em;
+    border: none;
+    border: 2px solid rgb(179, 178, 178);
+    font-weight: bold;
+    background-color: #f2e0a6;
+    color: grey;
 }
 
 /*Tile Styling */
