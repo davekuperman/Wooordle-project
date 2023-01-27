@@ -17,7 +17,7 @@ let row = 0
 
 let instructionsButton = document.querySelector('.instructions-button')
 instructionsButton.addEventListener('click',function(){
-    alert("VERY FUN WORD GAME INSTRUCTIONS")
+    alert("VERY FUN WORD GAME\n\n --- INSTRUCTIONS---- \n\n1. Input a 5 letter word. \n2. If the word is correct, you win! \n3.If the letter is in the correct location the tile will turn green. If the letter is in the word but in the wrong location, the tile will become yellow. If the letter doesnt belong in the word, the tile will turn grey. \n4. Most importantly: HAVE A WORLD OF FUN! ")
 })
 
 //use the array to skip over the rows  7th variable to complete the game, true is starting point

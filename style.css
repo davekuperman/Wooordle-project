@@ -43,6 +43,9 @@ h3 {
     font-family: 'Londrina Solid', cursive;
     ;
 }
+.instructions-container{
+    padding-bottom: 1em;
+}
 
 /*Tile Styling */
 
