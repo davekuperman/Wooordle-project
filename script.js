@@ -105,12 +105,13 @@ for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and a
 
         if (letter === 'del') {
             tiles[selectedTile - 1].textContent = ''
-            console.log('deleted')
+            
             usersWord.pop()
-                
-
-            selectedTile--
-            if (selectedTile == 0) { return; }
+            
+            if(usersWord.length === 0){return;}
+            selectedTile= selectedTile - 1
+            
+            
         }
         else if (letter === 'enter') {
             console.log('enter')
@@ -127,8 +128,12 @@ for (let i = 0; i < getLetters.length; i++) { //loops through all the keys and a
             selectedTile++
             console.log(selectedTile, row)
         }
+    
     }
     )
 
 }
 
+
+
+  
