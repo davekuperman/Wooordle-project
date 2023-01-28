@@ -1,6 +1,3 @@
-/* *, *::after, *::before{
-    box-sizing: border-box;
-} */
 
 
 body {
@@ -10,8 +7,12 @@ body {
     padding: 1em; /* <- em is a unit of measure based on the size of the font set within the element */
     background-color: #CEEDC7;
     text-align: center;
-    font-size: clamp(.5rem, 2.5vmin, 1.5rem);
 
+    font-size: clamp(.5rem, 2.5vmin, 1.5rem); 
+    /*    min, preferred, max           
+    responsive font sizing based on percentage size of the window.
+    more info on https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+    */
 }
 
 .container-h1 {
@@ -93,10 +94,7 @@ h3 {
 
     display: flex;
     justify-content: center;
-    /* display: grid;
-    grid-template-columns: repeat(20, minmax(auto, 1.25em));
-    grid-auto-rows: 3em;
-    gap: .25em; */
+   
 }
 .key {
     grid-column: span 2;
@@ -106,8 +104,6 @@ h3 {
     justify-content: center;
     align-items: center;
     padding: 1em;
-    /* height: 50px;
-    width: 50px; */
     border-radius: .25em;
     margin-right: 6px;
     margin-top: 2px;
