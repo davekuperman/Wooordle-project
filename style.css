@@ -97,7 +97,6 @@ h3 {
    
 }
 .key {
-    grid-column: span 2;
     border: none;
     text-transform: uppercase;
     background-color: #86C8BC;
